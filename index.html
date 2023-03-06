@@ -3,6 +3,28 @@
 <html lang="pt-pt">
 
 <head>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app.js"></script>
+<script type="module" src="https://www.gstatic.com/firebasejs/9.0.2/firebase-firestore.js"></script>
+
+<!-- Adicione o código do Firebase aqui -->
+<script>
+  // Seu código de configuração do Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyAXjBJLeAv-2PZC_XmPMtZq0Vheiv__8cQ",
+  authDomain: "bancada-e1425.firebaseapp.com",
+  projectId: "bancada-e1425",
+  storageBucket: "bancada-e1425.appspot.com",
+  messagingSenderId: "1066813629277",
+  appId: "1:1066813629277:web:9ac4a82e7ed7497368beb4",
+  measurementId: "G-XF6ZB13BZB"
+  };
+
+  // Inicialize o Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Inicialize o Firestore
+  var db = firebase.firestore();
+</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>
