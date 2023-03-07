@@ -288,11 +288,11 @@
             <div class="card-body">
               <div class="row icon-examples">
                
-                <div class="col-lg-4 col-md-6" id="Bancadas-all">
+                <div id="bancadas-view" class="col-lg-4 col-md-6" id="Bancadas-all">
                   <button type="button" class="btn-icon-clipboard">
                     <div><a href="../index.html">
                       <span class="avatar avatar-sm">
-                        <img alt="Image placeholder" src="../assets/img/brand/app launcher.png">
+                        <img id ="bancada_img" alt="Image placeholder" src="../assets/img/brand/app launcher.png">
                       </span>
                       <span id="bancada-each"></span></a>
                     </div>
