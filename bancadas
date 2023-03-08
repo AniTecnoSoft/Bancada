@@ -7,6 +7,10 @@
     body {
       display: none;
     }
+    #banca{
+      width: 100px;
+      height: 100px;
+    }
   </style>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
@@ -348,13 +352,14 @@
         const button = document.createElement("button");
         button.className = "btn-icon-clipboard";
         const div2 = document.createElement("div");
+        div2.className = "div-main"
         const a = document.createElement("a");
         a.setAttribute("href", "#");
         const span1 = document.createElement("span");
-        span1.className = "avatar avatar-sm"
+        span1.className = "avatar avatar-lg"
         const img = document.createElement("img");
-        img.src = bancada.face_image; // define o atributo src da imagem como a url da imagem da bancada
-        img.alt = bancada.name; // define o atributo alt da imagem como o nome da bancada
+        img.src = bancada.face_image;
+        img.alt = bancada.name;
         const span2 = document.createElement("span");
         span2.innerText = bancada.name;
 
