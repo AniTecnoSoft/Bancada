@@ -286,18 +286,9 @@
               <h3 class="mb-0">TODAS AS BANCADAS</h3>
             </div>
             <div class="card-body">
-              <div class="row icon-examples">
-               
-                <div id="bancadas-view" class="col-lg-4 col-md-6" id="Bancadas-all">
-                  <button type="button" class="btn-icon-clipboard">
-                    <div><a href="../index.html">
-                      <span class="avatar avatar-sm">
-                        <img id ="bancada_img" alt="Image placeholder" src="../assets/img/brand/app launcher.png">
-                      </span>
-                      <span id="bancada-each"></span></a>
-                    </div>
-                  </button>
-                </div>
+              <div class="row icon-examples" id="bancadas-view">
+                
+
               </div>
             </div>
           </div>
@@ -341,6 +332,50 @@
          token: "ee6fab19c5a04ac1a32a645abde4613a",
          application: "argon-dashboard-free"
        });
+   </script>
+   <script>
+  const bancadaView = document.getElementById("bancadas-view"); // Seleciona a div com o id "bancada-view"
+  const db = firebase.firestore();
+  db.collection("bancadas").onSnapshot((snapshot) => {
+    snapshot.docChanges().forEach((change) => {
+      if (change.type === "added") {
+        const bancada = change.doc.data(); // obtém os dados da bancada
+
+
+        const div = document.createElement("div");
+        div.className = "col-lg-4 col-md-6";
+        
+        const button = document.createElement("button");
+        button.className = "btn-icon-clipboard";
+        const div2 = document.createElement("div");
+        const a = document.createElement("a");
+        a.setAttribute("href", "#");
+        const span1 = document.createElement("span");
+        span1.className = ""
+        const img = document.createElement("img");
+        img.src = bancada.face_image; // define o atributo src da imagem como a url da imagem da bancada
+        img.alt = bancada.name; // define o atributo alt da imagem como o nome da bancada
+        const span2 = document.createElement("span");
+        span2.innerText = bancada.name;
+
+        
+
+        span1.appendChild(img);
+        a.appendChild(span1);
+        a.appendChild(span2);
+
+        div2.appendChild(a);
+
+        button.appendChild(div2);
+
+        div.appendChild(button);
+        bancadaView.appendChild(div);
+      
+      }
+    });
+  });
+
+
    </script>
 </body>
 
